@@ -1,0 +1,43 @@
+Import time 
+hoursWorked = 0
+loggerIn = false
+restTime = 0
+hoursPerWeek = input
+X = open(“timeKeeping.txt”, “r”)
+
+func whenLoggerOut(loggedIn, X, hoursPerWeek):
+    start = time.time()
+    while loggedIn == false:
+        loggedIn = input 
+    end while 
+    end  = time.time()
+    X.write((end - start)/3600hoursPerWeek)
+End func
+
+func whenLoggedIn(loggedIn, hoursWorked):
+    hoursWorked = hoursWorked - x.read()
+    start = time.time()
+    while loggedIn == true:
+        end = time.time()
+        if (end - start)/3600 == 0.25:
+            hoursWorked = hoursWorked + (end - start)/3600
+            start = time.time()
+        end if 
+        loggedIn = input
+    end while
+End func
+
+
+func rest(loggedIn,  restTime):
+    start = time.time()
+    while loggedIn == true:
+        end = time.time()
+        if (end - start)/3600 <= 52/60:
+            restTime = (end - start)/360017/52
+        elif (end - start)/3600 <= 104/60:
+            restTime = 17 + ((end - start)3600-17/60)*17/104
+        else:
+            restTime = 17 +17/2
+        end if 
+    end while 
+End func
